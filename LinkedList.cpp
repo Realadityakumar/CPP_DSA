@@ -10,7 +10,41 @@ class Node{
         this->next = NULL;
     }
 };
+void insertAtHead(Node* &head, int data){
+    Node* temp = new Node(data);
+    temp -> next = head;
+    head  = temp ;
+}
+void insertAtPostion(Node* &head, Node* &tail, int position,int data){
+    //Step One -- if the position is at first
+    if(position == 1){
+        insertAtHead(head,data);
+        return;
+    }
+    // Let's see for different pos
+    Node* temp = head;
+    int cnt = 1;//finding the node to make change 
+    while (cnt < position-1){
+        temp = temp->next;
+        cnt++;
+    }
+    // now we have to create a new node and assign the address of upcoming block
+
+    Node* nodetoinsert = new Node(data);
+
+    nodetoinsert->next = temp->next;
+    temp->next = nodetoinsert;
+
+    {
+        /* code */
+    }
+    
+}
 int main(){
     Node* node1 = new Node(10);
-    cout << node1 -> data;
+    Node* head = node1;
+    Node* tail = node1;
+    insertAtHead(head,11);
+    insertAtPostion(head,tail,1,15);
+    cout << head -> data;
 }
