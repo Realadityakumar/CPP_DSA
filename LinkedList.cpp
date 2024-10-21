@@ -37,7 +37,7 @@ void insertAtPostion(Node* &head, Node* &tail, int position,int data){
    nodetoinsert->next = temp->next;
     temp->next = nodetoinsert;
     
-    //hello word
+    //hello wordd
 }
 int main(){
     Node* node1 = new Node(10);
