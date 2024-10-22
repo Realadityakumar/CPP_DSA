@@ -28,16 +28,14 @@ void insertAtPostion(Node* &head, Node* &tail, int position,int data){
         temp = temp->next;
         cnt++;
     }
-    // now we have to create a new node and assign the address of upcoming block
-//final check
     Node* nodetoinsert = new Node(data);
 
     nodetoinsert->next = temp->next;
     temp->next = nodetoinsert;
    nodetoinsert->next = temp->next;
-    temp->next = nodetoinsert;fadsfafasd
+    temp->next = nodetoinsert;
     
-    //hello wordd,,, lets checkk what the issuee here
+   
 }
 int main(){
     Node* node1 = new Node(10);
