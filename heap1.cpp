@@ -59,10 +59,10 @@ class  heap{
         int left = 2*i;
         int right = 2 * i + 1;
         // comparing if the left or right is greate who ever is greater just swap with it and recall the function
-        if(left < n && arr[largest]<arr[left]){
+        if(left <= n && arr[largest]<arr[left]){
             largest = left;
         }
-        if(right < n && arr[largest]<arr[right]){
+        if(right <= n && arr[largest]<arr[right]){
             largest = right;
         }
         if(largest != i){
@@ -70,6 +70,19 @@ class  heap{
             heapify(arr,n,largest);
         }
     }
+    // heap sort
+    void heapSort(int arr[],int n){
+        int size = n;
+        while (size>1)
+        {
+        swap(arr[1],arr[n]);
+        size--;
+        heapify(arr,size,1);
+        }
+        
+        
+    }
+
 };
 
 int main(){
@@ -82,10 +95,14 @@ int main(){
     // h.deleteFromHeap();
     int arr[100] = {-1,1,5,4,8,6,7,9};
     int n = 8;
-    for (int i = 1 ; i > n/2; i--){
+    // for (int i = n/2 ; i > 0; i--){
+    //     h.heapify(arr,n,i);
+    // }
+    for (int i = n/2; i > 0; i--){
         h.heapify(arr,n,i);
     }
     
+    h.heapSort(arr,n);
         for (int i = 1; i <=n; i++)
         {
             cout << arr[i] << " ";
